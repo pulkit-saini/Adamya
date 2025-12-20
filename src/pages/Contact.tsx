@@ -12,33 +12,35 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  Target,
+} from "lucide-react";
 import { toast } from "sonner";
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@adamya.com",
-    href: "mailto:contact@adamya.com",
+    value: "info@adamyainov.in",
+    href: "mailto:info@adamyainov.in",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+91 1204164821",
+    href: "tel:+911204164821",
   },
   {
     icon: MapPin,
-    label: "India Office",
-    value: "Mumbai, Maharashtra",
-    href: "#",
-  },
-  {
-    icon: MapPin,
-    label: "US Office",
-    value: "San Francisco, CA",
-    href: "#",
+    label: "Office",
+    value: "H-87, 3rd Floor, Sector 63, Noida, UP, India",
+    href: "https://maps.app.goo.gl/LWWHazh9Zhbp8buM6",
   },
 ];
 
@@ -82,8 +84,8 @@ const Contact = () => {
               Let's Build Something Amazing Together
             </h1>
             <p className="text-lg text-muted-foreground">
-              Ready to transform your business? Get in touch with our team for 
-              a free consultation and discover how we can help.
+              Ready to transform your business? Get in touch with our team for a
+              free consultation and discover how we can help.
             </p>
           </div>
         </div>
@@ -106,10 +108,13 @@ const Contact = () => {
                         Message Sent Successfully!
                       </h3>
                       <p className="text-muted-foreground mb-6">
-                        Thank you for reaching out. Our team will get back to you 
-                        within 24 business hours.
+                        Thank you for reaching out. Our team will get back to
+                        you within 24 business hours.
                       </p>
-                      <Button onClick={() => setIsSubmitted(false)} variant="outline">
+                      <Button
+                        onClick={() => setIsSubmitted(false)}
+                        variant="outline"
+                      >
                         Send Another Message
                       </Button>
                     </div>
@@ -122,19 +127,11 @@ const Contact = () => {
                         <div className="grid sm:grid-cols-2 gap-4">
                           <div className="space-y-2">
                             <Label htmlFor="firstName">First Name *</Label>
-                            <Input
-                              id="firstName"
-                              placeholder="John"
-                              required
-                            />
+                            <Input id="firstName" placeholder="John" required />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="lastName">Last Name *</Label>
-                            <Input
-                              id="lastName"
-                              placeholder="Doe"
-                              required
-                            />
+                            <Input id="lastName" placeholder="Doe" required />
                           </div>
                         </div>
 
@@ -161,20 +158,24 @@ const Contact = () => {
                         <div className="grid sm:grid-cols-2 gap-4">
                           <div className="space-y-2">
                             <Label htmlFor="company">Company</Label>
-                            <Input
-                              id="company"
-                              placeholder="Your Company"
-                            />
+                            <Input id="company" placeholder="Your Company" />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="service">Service Interested In</Label>
+                            <Label htmlFor="service">
+                              Service Interested In
+                            </Label>
                             <Select>
                               <SelectTrigger>
                                 <SelectValue placeholder="Select a service" />
                               </SelectTrigger>
                               <SelectContent>
                                 {services.map((service) => (
-                                  <SelectItem key={service} value={service.toLowerCase().replace(/\s+/g, "-")}>
+                                  <SelectItem
+                                    key={service}
+                                    value={service
+                                      .toLowerCase()
+                                      .replace(/\s+/g, "-")}
+                                  >
                                     {service}
                                   </SelectItem>
                                 ))}
@@ -184,7 +185,9 @@ const Contact = () => {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="message">Tell Us About Your Project *</Label>
+                          <Label htmlFor="message">
+                            Tell Us About Your Project *
+                          </Label>
                           <Textarea
                             id="message"
                             placeholder="Describe your project requirements, goals, and timeline..."
@@ -193,7 +196,12 @@ const Contact = () => {
                           />
                         </div>
 
-                        <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                        <Button
+                          type="submit"
+                          size="lg"
+                          className="w-full"
+                          disabled={isSubmitting}
+                        >
                           {isSubmitting ? (
                             "Sending..."
                           ) : (
@@ -227,8 +235,12 @@ const Contact = () => {
                         <item.icon className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground">{item.label}</p>
-                        <p className="font-medium text-foreground">{item.value}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {item.label}
+                        </p>
+                        <p className="font-medium text-foreground">
+                          {item.value}
+                        </p>
                       </div>
                     </a>
                   ))}
@@ -236,7 +248,7 @@ const Contact = () => {
               </div>
 
               <Card className="border-border/50 bg-primary/5">
-                <CardContent className="p-6">
+                <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-3">
                     <Clock className="h-5 w-5 text-primary" />
                     <h3 className="font-semibold">Business Hours</h3>
@@ -254,17 +266,17 @@ const Contact = () => {
 
               {/* Map placeholder */}
               <Card className="border-border/50 overflow-hidden">
-                <div className="aspect-video bg-muted flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-                    <p className="text-sm text-muted-foreground">
-                      Global Presence
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      Mumbai • San Francisco
-                    </p>
-                  </div>
-                </div>
+                <section className=" bg-muted">
+                  <iframe
+                    src="https://maps.google.com/maps?hl=en&q=H%20Block%2C%20Sector%2063%2C%20Noida&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Office Location"
+                  />
+                </section>
               </Card>
             </div>
           </div>

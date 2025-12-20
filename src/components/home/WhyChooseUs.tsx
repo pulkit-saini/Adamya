@@ -5,6 +5,8 @@ const reasons = [
     icon: Shield,
     title: "Google Certified Experts",
     description: "Our team holds official Google Cloud certifications ensuring top-tier expertise.",
+    
+  
   },
   {
     icon: Zap,

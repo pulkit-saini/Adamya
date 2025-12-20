@@ -13,7 +13,7 @@ const Index = () => {
       <ServicesPreview />
       <GooglePartnerBanner />
       <WhyChooseUs />
-      <Testimonials />
+      
       <CTASection />
     </Layout>
   );

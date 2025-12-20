@@ -51,15 +51,15 @@ export const Footer = () => {
               <div className="space-y-2 text-sm text-background/70">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  <span>contact@adamya.com</span>
+                  <span>info@adamyainov.in</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 1204164821</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  <span>Mumbai, India & San Francisco, USA</span>
+                  <span> H-87, 3rd Floor, Sector 63, Noida, UP, India</span>
                 </div>
               </div>
             </div>
