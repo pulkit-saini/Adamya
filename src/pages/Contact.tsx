@@ -27,8 +27,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "info@adamyainov.in",
-    href: "mailto:info@adamyainov.in",
+    value: "info@adamyainov.com",
+    href: "mailto:info@adamyainov.com",
   },
   {
     icon: Phone,

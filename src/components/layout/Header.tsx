@@ -14,8 +14,8 @@ const navigation = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Google Partnership", href: "/partnership" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Contact", href: "/contact" },
+  //{ name: "Case Studies", href: "/case-studies" },
+  //{ name: "Contact", href: "/contact" },
 ];
 
 export const Header = () => {
@@ -57,7 +57,7 @@ export const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex lg:items-center lg:gap-4">
             <Button asChild>
-              <Link to="/contact">Get a Free Consultation</Link>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
 
@@ -97,7 +97,7 @@ export const Header = () => {
               <div className="pt-4">
                 <Button asChild className="w-full">
                   <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    Get a Free Consultation
+                    Contact Us
                   </Link>
                 </Button>
               </div>

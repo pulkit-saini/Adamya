@@ -12,8 +12,7 @@ const Index = () => {
       <HeroSection />
       <ServicesPreview />
       <GooglePartnerBanner />
-      <WhyChooseUs />
-      
+      <WhyChooseUs /> 
       <CTASection />
     </Layout>
   );

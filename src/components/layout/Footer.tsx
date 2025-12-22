@@ -51,7 +51,7 @@ export const Footer = () => {
               <div className="space-y-2 text-sm text-background/70">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  <span>info@adamyainov.in</span>
+                  <span>info@adamyainov.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />

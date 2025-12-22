@@ -119,7 +119,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Timeline 
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -158,6 +158,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* CTA */}
       <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
@@ -176,9 +177,7 @@ const About = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 text-foreground hover:bg-primary-foreground/10">
-              <Link to="/careers">View Careers</Link>
-            </Button>
+            
           </div>
         </div>
       </section>

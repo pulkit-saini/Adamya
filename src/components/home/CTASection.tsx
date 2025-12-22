@@ -42,13 +42,13 @@ export const CTASection = () => {
 
           {/* Contact info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-background/60">
-            <a href="tel:+15551234567" className="flex items-center gap-2 hover:text-background transition-colors">
+            <a href="tel:+911204164821" className="flex items-center gap-2 hover:text-background transition-colors">
               <Phone className="h-4 w-4" />
-              <span>+1 (555) 123-4567</span>
+              <span>+91 1204164821</span>
             </a>
-            <a href="mailto:contact@adamya.com" className="flex items-center gap-2 hover:text-background transition-colors">
+            <a href="mailto:info@adamyainov.com" className="flex items-center gap-2 hover:text-background transition-colors">
               <Mail className="h-4 w-4" />
-              <span>contact@adamya.com</span>
+              <span>info@adamyainov.com</span>
             </a>
           </div>
         </div>
