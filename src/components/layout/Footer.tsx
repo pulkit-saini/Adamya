@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
 
 const footerLinks = {
   company: [
@@ -24,7 +24,7 @@ const footerLinks = {
 
 const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
+  //{ name: "Twitter", icon: Twitter, href: "#" },
   { name: "Facebook", icon: Facebook, href: "#" },
   { name: "Instagram", icon: Instagram, href: "#" },
 ];
@@ -119,7 +119,7 @@ export const Footer = () => {
         <div className="border-t border-background/10 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-background/60">
-              © {new Date().getFullYear()} Adamya Solutions. All rights reserved.
+              © {new Date().getFullYear()} Adamya Innovations LLP. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((link) => (

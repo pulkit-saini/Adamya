@@ -59,18 +59,50 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // 1. Gather form data
+    const formData = {
+      firstName: (e.currentTarget.elements.namedItem('firstName') as HTMLInputElement).value,
+      lastName: (e.currentTarget.elements.namedItem('lastName') as HTMLInputElement).value,
+      email: (e.currentTarget.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (e.currentTarget.elements.namedItem('phone') as HTMLInputElement).value,
+      company: (e.currentTarget.elements.namedItem('company') as HTMLInputElement).value,
+      // Note: For Select components in ShadCN/Radix, the value is often handled by state. 
+      // If you haven't bound it to state, you might need to ensure the Select updates a hidden input 
+      // or manage a simple state for 'service'. Assuming 'service' is managed:
+      service: (e.currentTarget.querySelector('button[role="combobox"] span')?.textContent) || "Other",
+      message: (e.currentTarget.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast.success("Thank you! We'll be in touch within 24 hours.");
+    try {
+      // 2. Send data to your Vercel API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast.success("Thank you! We'll be in touch within 24 hours.");
+        // Optional: Reset form here
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
   return (
     <Layout>
       {/* Hero */}
